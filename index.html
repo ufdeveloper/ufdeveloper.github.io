@@ -1,0 +1,22 @@
+<html>
+   <head>
+      <title>Iframe Embed Testing</title>
+   </head>
+   <body>
+   <h1>Embed resources within an Iframe</h1>
+   <form action="" method="post" id="url-setter">
+      <input type="text" name="url" id="url" size="100"/> &nbsp;&nbsp;
+      <button type="submit" name="submit">Embed URL in Iframe</button>
+   </form><iframe id="the-frame" width="1000" height="800" src="" allow="publickey-credentials-get *"></iframe>
+   <script type="text/javascript">
+      (function () {
+         "use strict";
+         var url_setter = document.getElementById('url-setter'), url = document.getElementById('url'), the_iframe = document.getElementById('the-frame');
+         url_setter.onsubmit = function (event) {
+            event.preventDefault();
+            the_iframe.src = url.value;
+         };
+      }());
+   </script>
+   </body>
+</html>
